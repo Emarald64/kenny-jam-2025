@@ -1,0 +1,157 @@
+[gd_scene load_steps=11 format=3 uid="uid://bs3aw1vu5tdks"]
+
+[ext_resource type="Script" uid="uid://6ooxkedivqkr" path="res://card.gd" id="1_b4rk6"]
+[ext_resource type="Texture2D" uid="uid://ccd4tabdsqkok" path="res://art/cards/card_empty.png" id="2_6lcat"]
+[ext_resource type="FontFile" uid="uid://cbgg56c6o16u1" path="res://art/Silkscreen-Regular.ttf" id="3_ut1v0"]
+[ext_resource type="Texture2D" uid="uid://dutijogoqw7n1" path="res://art/icon.svg" id="4_vno60"]
+[ext_resource type="Texture2D" uid="uid://ddr7qmemf53t1" path="res://art/cards/button_square_line-red.png" id="5_l0gnn"]
+[ext_resource type="Texture2D" uid="uid://ci1gn53fglb2m" path="res://art/cards/suit_hearts.png" id="6_is7yf"]
+[ext_resource type="Texture2D" uid="uid://2gw8obgwlbyt" path="res://art/cards/button_square_line-blue.png" id="7_5biq5"]
+[ext_resource type="Texture2D" uid="uid://dr6a6lng8cxy2" path="res://art/cards/sword.png" id="8_kicxe"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oaj0s"]
+texture = ExtResource("5_l0gnn")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lbpyt"]
+texture = ExtResource("7_5biq5")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[node name="Card" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -802.0
+offset_bottom = -298.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b4rk6")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6lcat")
+
+[node name="Title" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_top = 26.0
+offset_right = 33.0
+offset_bottom = 57.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ut1v0")
+theme_override_font_sizes/font_size = 24
+text = "Title"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 60.0
+offset_right = 264.0
+offset_bottom = 226.0
+texture = ExtResource("4_vno60")
+expand_mode = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 94.0
+offset_top = 254.0
+offset_right = 144.0
+offset_bottom = 306.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -8.0
+offset_top = -16.0
+offset_right = 62.0
+offset_bottom = 60.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_oaj0s")
+
+[node name="heart" type="TextureRect" parent="Control"]
+self_modulate = Color(1, 0, 0, 1)
+texture_filter = 2
+layout_mode = 2
+offset_left = -5.0
+offset_top = -18.0
+offset_right = 59.0
+offset_bottom = 46.0
+texture = ExtResource("6_is7yf")
+
+[node name="Health" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 17.0
+offset_right = 3.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 203.0
+offset_top = 253.0
+offset_right = 253.0
+offset_bottom = 305.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Control2"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -8.0
+offset_top = -16.0
+offset_right = 62.0
+offset_bottom = 60.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_lbpyt")
+
+[node name="sword" type="TextureRect" parent="Control2"]
+self_modulate = Color(0.4, 0.62, 1, 1)
+texture_filter = 2
+layout_mode = 2
+offset_left = 3.0
+offset_top = -9.0
+offset_right = 67.0
+offset_bottom = 55.0
+scale = Vector2(0.754253, 0.754253)
+texture = ExtResource("8_kicxe")
+
+[node name="Attack" type="Label" parent="Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 17.0
+offset_right = 3.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
