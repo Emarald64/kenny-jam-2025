@@ -10,9 +10,14 @@ config_version=5
 
 [application]
 
-config/name="test"
+config/name="kenny jam 2025"
+run/main_scene="uid://bs3aw1vu5tdks"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://art/icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/wakatime/plugin.cfg")
 
 [rendering]
 

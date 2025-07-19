@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci1gn53fglb2m"
-path="res://.godot/imported/suit_hearts.png-022b1059772b359782a29dc0c30a3455.ctex"
+uid="uid://ddr7qmemf53t1"
+path="res://.godot/imported/button_square_line-red.png-69894b966049c949200cc870419f0706.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/cards/suit_hearts.png"
-dest_files=["res://.godot/imported/suit_hearts.png-022b1059772b359782a29dc0c30a3455.ctex"]
+source_file="res://art/borders/button_square_line-red.png"
+dest_files=["res://.godot/imported/button_square_line-red.png-69894b966049c949200cc870419f0706.ctex"]
 
 [params]
 

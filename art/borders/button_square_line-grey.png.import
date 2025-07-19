@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddr7qmemf53t1"
-path="res://.godot/imported/button_square_line-red.png-c4b32b6a3816fc958733399324c1d191.ctex"
+uid="uid://12hihl8toyun"
+path="res://.godot/imported/button_square_line-grey.png-496755a4710a8d6f7d3062cac5808a87.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/cards/button_square_line-red.png"
-dest_files=["res://.godot/imported/button_square_line-red.png-c4b32b6a3816fc958733399324c1d191.ctex"]
+source_file="res://art/borders/button_square_line-grey.png"
+dest_files=["res://.godot/imported/button_square_line-grey.png-496755a4710a8d6f7d3062cac5808a87.ctex"]
 
 [params]
 

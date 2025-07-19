@@ -1,23 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://bs3aw1vu5tdks"]
+[gd_scene load_steps=10 format=3 uid="uid://bs3aw1vu5tdks"]
 
-[ext_resource type="Script" uid="uid://6ooxkedivqkr" path="res://card.gd" id="1_b4rk6"]
-[ext_resource type="Texture2D" uid="uid://ccd4tabdsqkok" path="res://art/cards/card_empty.png" id="2_6lcat"]
-[ext_resource type="FontFile" uid="uid://cbgg56c6o16u1" path="res://art/Silkscreen-Regular.ttf" id="3_ut1v0"]
-[ext_resource type="Texture2D" uid="uid://dutijogoqw7n1" path="res://art/icon.svg" id="4_vno60"]
-[ext_resource type="Texture2D" uid="uid://ddr7qmemf53t1" path="res://art/cards/button_square_line-red.png" id="5_l0gnn"]
-[ext_resource type="Texture2D" uid="uid://ci1gn53fglb2m" path="res://art/cards/suit_hearts.png" id="6_is7yf"]
-[ext_resource type="Texture2D" uid="uid://2gw8obgwlbyt" path="res://art/cards/button_square_line-blue.png" id="7_5biq5"]
-[ext_resource type="Texture2D" uid="uid://dr6a6lng8cxy2" path="res://art/cards/sword.png" id="8_kicxe"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oaj0s"]
-texture = ExtResource("5_l0gnn")
-texture_margin_left = 8.0
-texture_margin_top = 8.0
-texture_margin_right = 8.0
-texture_margin_bottom = 8.0
+[ext_resource type="Script" uid="uid://6ooxkedivqkr" path="res://scripts/card.gd" id="1_nvopj"]
+[ext_resource type="Texture2D" uid="uid://ccd4tabdsqkok" path="res://art/cards/card_empty.png" id="2_1yd6c"]
+[ext_resource type="FontFile" uid="uid://cbgg56c6o16u1" path="res://art/Silkscreen-Regular.ttf" id="3_we8pq"]
+[ext_resource type="Texture2D" uid="uid://dutijogoqw7n1" path="res://art/icon.svg" id="4_4wvaf"]
+[ext_resource type="StyleBox" uid="uid://clj15pscsn72c" path="res://assets/red stylebox.tres" id="5_u8dfr"]
+[ext_resource type="Texture2D" uid="uid://ci1gn53fglb2m" path="res://art/suit_hearts.png" id="6_hpf3o"]
+[ext_resource type="Texture2D" uid="uid://2gw8obgwlbyt" path="res://art/borders/button_square_line-blue.png" id="7_42b55"]
+[ext_resource type="Texture2D" uid="uid://dr6a6lng8cxy2" path="res://art/sword.png" id="8_xjciw"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lbpyt"]
-texture = ExtResource("7_5biq5")
+texture = ExtResource("7_42b55")
 texture_margin_left = 8.0
 texture_margin_top = 8.0
 texture_margin_right = 8.0
@@ -28,11 +21,12 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -802.0
-offset_bottom = -298.0
+offset_right = -922.0
+offset_bottom = -320.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_b4rk6")
+script = ExtResource("1_nvopj")
+AffectText = "hello world"
 
 [node name="Background" type="TextureRect" parent="."]
 texture_filter = 1
@@ -42,7 +36,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_6lcat")
+texture = ExtResource("2_1yd6c")
+stretch_mode = 4
 
 [node name="Title" type="Label" parent="."]
 texture_filter = 1
@@ -56,26 +51,26 @@ offset_right = 33.0
 offset_bottom = 57.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_ut1v0")
+theme_override_fonts/font = ExtResource("3_we8pq")
 theme_override_font_sizes/font_size = 24
 text = "Title"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 80.0
-offset_top = 60.0
-offset_right = 264.0
-offset_bottom = 226.0
-texture = ExtResource("4_vno60")
+offset_left = 26.0
+offset_top = 53.0
+offset_right = 210.0
+offset_bottom = 219.0
+texture = ExtResource("4_4wvaf")
 expand_mode = 2
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 2
 anchors_preset = 0
-offset_left = 94.0
-offset_top = 254.0
-offset_right = 144.0
-offset_bottom = 306.0
+offset_left = 34.0
+offset_top = 243.0
+offset_right = 84.0
+offset_bottom = 295.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Control"]
 texture_filter = 1
@@ -84,7 +79,7 @@ offset_left = -8.0
 offset_top = -16.0
 offset_right = 62.0
 offset_bottom = 60.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_oaj0s")
+theme_override_styles/panel = ExtResource("5_u8dfr")
 
 [node name="heart" type="TextureRect" parent="Control"]
 self_modulate = Color(1, 0, 0, 1)
@@ -94,7 +89,7 @@ offset_left = -5.0
 offset_top = -18.0
 offset_right = 59.0
 offset_bottom = 46.0
-texture = ExtResource("6_is7yf")
+texture = ExtResource("6_hpf3o")
 
 [node name="Health" type="Label" parent="Control"]
 layout_mode = 1
@@ -115,10 +110,11 @@ vertical_alignment = 1
 [node name="Control2" type="Control" parent="."]
 layout_mode = 2
 anchors_preset = 0
-offset_left = 203.0
-offset_top = 253.0
-offset_right = 253.0
-offset_bottom = 305.0
+offset_left = 146.0
+offset_top = 242.0
+offset_right = 196.0
+offset_bottom = 294.0
+mouse_filter = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="Control2"]
 texture_filter = 1
@@ -138,7 +134,7 @@ offset_top = -9.0
 offset_right = 67.0
 offset_bottom = 55.0
 scale = Vector2(0.754253, 0.754253)
-texture = ExtResource("8_kicxe")
+texture = ExtResource("8_xjciw")
 
 [node name="Attack" type="Label" parent="Control2"]
 layout_mode = 1
@@ -155,3 +151,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "50"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
