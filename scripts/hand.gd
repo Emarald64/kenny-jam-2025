@@ -12,8 +12,10 @@ func _ready() -> void:
 
 func spreadCards():
 	for i in range(len(cards)):
-		cards[i].position.x=1000*(i+1)/(len(cards)+1)
-		cards[i].position.y=10
+		cards[i].rotation=(PI/16*(i+1)/(len(cards)+1))-PI/32
+		cards[i].position.x=(sin(cards[i].rotation*4)*1200)+500
+		cards[i].position.y=-cos(cards[i].rotation*4)*200+200
+		if cards[i].hovered:cards[i].position.y-=10
 		cards[i].id=i
 
 func addCard(card:Card):
@@ -24,5 +26,10 @@ func addCard(card:Card):
 func removeCard(card:Card):
 	cards.erase(card)
 	remove_child(card)
+	spreadCards()
+
+func removeCardById(id:int):
+	remove_child(cards[id])
+	cards.remove_at(id)
 	spreadCards()
 	
