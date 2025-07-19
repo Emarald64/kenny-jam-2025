@@ -1,0 +1,143 @@
+[gd_scene load_steps=23 format=3 uid="uid://r1kcga61rmtc"]
+
+[ext_resource type="Texture2D" uid="uid://ckwnpqy6cculc" path="res://assets/Default/blue_hand_closed.png" id="1_2gnyt"]
+[ext_resource type="Texture2D" uid="uid://d3bp7nd500cun" path="res://assets/Default/blue_body_squircle.png" id="2_ebki3"]
+[ext_resource type="Texture2D" uid="uid://omddfnxhqbp4" path="res://assets/Default/blue_hand_rock.png" id="3_l4twv"]
+[ext_resource type="Texture2D" uid="uid://cgjyord02a0bm" path="res://assets/Default/face_g.png" id="4_s7yyj"]
+[ext_resource type="Texture2D" uid="uid://bdjvex5bpkirr" path="res://assets/Default/pink_body_rhombus.png" id="5_mcg62"]
+[ext_resource type="Texture2D" uid="uid://cox4weo8uhouj" path="res://assets/Default/pink_hand_closed.png" id="6_pf8tf"]
+[ext_resource type="Texture2D" uid="uid://bx2acjq6tae4b" path="res://assets/Default/pink_hand_point.png" id="7_tbgiv"]
+[ext_resource type="Texture2D" uid="uid://c0wa1i1w640qu" path="res://assets/Default/face_l.png" id="8_nufue"]
+[ext_resource type="Texture2D" uid="uid://bkay2fthmtiwf" path="res://assets/Default/green_body_circle.png" id="9_4mctv"]
+[ext_resource type="Texture2D" uid="uid://bkj1ymxcw48uy" path="res://assets/Default/face_d.png" id="10_32mqw"]
+[ext_resource type="Texture2D" uid="uid://bxpeoaguem1wc" path="res://assets/Default/green_hand_point.png" id="11_vpqji"]
+[ext_resource type="Texture2D" uid="uid://bib4fr6cirqfc" path="res://assets/Default/green_hand_thumb.png" id="12_neqlw"]
+[ext_resource type="Texture2D" uid="uid://craaf8tjakd8c" path="res://assets/Default/yellow_body_squircle.png" id="13_2r1ff"]
+[ext_resource type="Texture2D" uid="uid://omyy7dkrfh1r" path="res://assets/Default/hand_yellow_open.png" id="14_y7tmx"]
+[ext_resource type="Texture2D" uid="uid://bo5iv8xpwy7yk" path="res://assets/Default/hand_yellow_peace.png" id="15_j5kdu"]
+[ext_resource type="Texture2D" uid="uid://8ueuo6wgtrnf" path="res://assets/Default/purple_body_square.png" id="16_r6pcs"]
+[ext_resource type="Texture2D" uid="uid://6hdvxdc34mey" path="res://assets/Default/face_b.png" id="17_uxb8y"]
+[ext_resource type="Texture2D" uid="uid://jdugfamt38fo" path="res://assets/Default/red_body_rhombus.png" id="18_vbrvt"]
+[ext_resource type="Texture2D" uid="uid://dpxf12nrpp5g7" path="res://assets/Default/red_hand_point.png" id="19_7n86b"]
+[ext_resource type="Texture2D" uid="uid://dyuetge4ya750" path="res://assets/Default/face_e.png" id="20_g4jl1"]
+[ext_resource type="Texture2D" uid="uid://uxq3kiygmedn" path="res://assets/Default/red_hand_open.png" id="21_6ut2q"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_11vuw"]
+load_path = "res://.godot/imported/facial_part_eye_open.png-d0587b528d672c5a5db77d0417ae55dd.ctex"
+
+[node name="Character" type="Node2D"]
+metadata/Health = 0
+metadata/Damage = 0
+
+[node name="Warrior" type="Node2D" parent="."]
+visible = false
+
+[node name="BlueHandClosed" type="Sprite2D" parent="Warrior"]
+position = Vector2(51, 7)
+rotation = 2.19568
+scale = Vector2(1, 1)
+texture = ExtResource("1_2gnyt")
+
+[node name="BlueBodySquircle" type="Sprite2D" parent="Warrior"]
+texture = ExtResource("2_ebki3")
+
+[node name="BlueHandRock" type="Sprite2D" parent="Warrior"]
+position = Vector2(-52, -6)
+rotation = -0.471538
+texture = ExtResource("3_l4twv")
+
+[node name="FaceG" type="Sprite2D" parent="Warrior"]
+position = Vector2(0, -10)
+texture = ExtResource("4_s7yyj")
+
+[node name="Archer" type="Node2D" parent="."]
+visible = false
+
+[node name="PinkBodyRhombus" type="Sprite2D" parent="Archer"]
+texture = ExtResource("5_mcg62")
+
+[node name="PinkHandClosed" type="Sprite2D" parent="Archer"]
+position = Vector2(50, -4)
+rotation = 1.13264
+texture = ExtResource("6_pf8tf")
+
+[node name="PinkHandPoint" type="Sprite2D" parent="Archer"]
+z_index = 100
+position = Vector2(-42, -8)
+texture = ExtResource("7_tbgiv")
+
+[node name="FaceL" type="Sprite2D" parent="Archer"]
+position = Vector2(-1, -6)
+texture = ExtResource("8_nufue")
+
+[node name="FacialPartEyeOpen" type="Sprite2D" parent="Archer"]
+position = Vector2(14.5, -4.25)
+scale = Vector2(1.15, 1.025)
+texture = SubResource("CompressedTexture2D_11vuw")
+
+[node name="Gunner" type="Node2D" parent="."]
+visible = false
+
+[node name="GreenBodyCircle" type="Sprite2D" parent="Gunner"]
+texture = ExtResource("9_4mctv")
+
+[node name="FaceD" type="Sprite2D" parent="Gunner"]
+position = Vector2(0, -6)
+texture = ExtResource("10_32mqw")
+
+[node name="GreenHandPoint" type="Sprite2D" parent="Gunner"]
+position = Vector2(51, -2)
+texture = ExtResource("11_vpqji")
+
+[node name="GreenHandThumb" type="Sprite2D" parent="Gunner"]
+position = Vector2(-49, -6)
+scale = Vector2(-0.919998, 1)
+texture = ExtResource("12_neqlw")
+
+[node name="Healer" type="Node2D" parent="."]
+visible = false
+
+[node name="YellowBodySquircle" type="Sprite2D" parent="Healer"]
+texture = ExtResource("13_2r1ff")
+
+[node name="FaceL" type="Sprite2D" parent="Healer"]
+position = Vector2(0, -8)
+texture = ExtResource("8_nufue")
+
+[node name="HandYellowOpen" type="Sprite2D" parent="Healer"]
+position = Vector2(-52, 2)
+rotation = -1.57417
+texture = ExtResource("14_y7tmx")
+
+[node name="HandYellowPeace" type="Sprite2D" parent="Healer"]
+position = Vector2(48, -6)
+rotation = 0.393351
+texture = ExtResource("15_j5kdu")
+
+[node name="Wall" type="Node2D" parent="."]
+visible = false
+
+[node name="PurpleBodySquare" type="Sprite2D" parent="Wall"]
+texture = ExtResource("16_r6pcs")
+
+[node name="FaceB" type="Sprite2D" parent="Wall"]
+position = Vector2(0, -10)
+texture = ExtResource("17_uxb8y")
+
+[node name="Enemy" type="Node2D" parent="."]
+visible = false
+
+[node name="RedBodyRhombus" type="Sprite2D" parent="Enemy"]
+texture = ExtResource("18_vbrvt")
+
+[node name="RedHandPoint" type="Sprite2D" parent="Enemy"]
+position = Vector2(54, -7)
+texture = ExtResource("19_7n86b")
+
+[node name="FaceE" type="Sprite2D" parent="Enemy"]
+texture = ExtResource("20_g4jl1")
+
+[node name="RedHandOpen" type="Sprite2D" parent="Enemy"]
+position = Vector2(-48, -13)
+scale = Vector2(0.970588, 1)
+texture = ExtResource("21_6ut2q")
