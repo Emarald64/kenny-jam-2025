@@ -23,6 +23,12 @@ func addCard(card:Card):
 	add_child(card)
 	spreadCards()
 
+func addCards(newCards:Array):
+	cards.append_array(newCards)
+	for card in newCards:
+		add_child(card)
+	spreadCards()
+
 func removeCard(card:Card):
 	cards.erase(card)
 	remove_child(card)

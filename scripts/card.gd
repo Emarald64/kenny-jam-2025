@@ -5,6 +5,7 @@ class_name Card
 var popup:PanelContainer
 var hovered:=false
 var id=0
+var canPlay=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

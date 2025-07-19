@@ -23,7 +23,6 @@
 [ext_resource type="Texture2D" uid="uid://uxq3kiygmedn" path="res://assets/Default/red_hand_open.png" id="21_6ut2q"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_11vuw"]
-load_path = "res://.godot/imported/facial_part_eye_open.png-d0587b528d672c5a5db77d0417ae55dd.ctex"
 
 [node name="Character" type="Node2D"]
 metadata/Health = 0
@@ -35,7 +34,6 @@ visible = false
 [node name="BlueHandClosed" type="Sprite2D" parent="Warrior"]
 position = Vector2(51, 7)
 rotation = 2.19568
-scale = Vector2(1, 1)
 texture = ExtResource("1_2gnyt")
 
 [node name="BlueBodySquircle" type="Sprite2D" parent="Warrior"]
