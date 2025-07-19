@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjqun1bv7070e"]
+
+[ext_resource type="PackedScene" uid="uid://r1kcga61rmtc" path="res://scenes/Character.tscn" id="1_e0wpt"]
+[ext_resource type="Texture2D" uid="uid://bkay2fthmtiwf" path="res://assets/Default/green_body_circle.png" id="2_6fcs6"]
+[ext_resource type="Texture2D" uid="uid://bkj1ymxcw48uy" path="res://assets/Default/face_d.png" id="3_fvy2p"]
+[ext_resource type="Texture2D" uid="uid://bxpeoaguem1wc" path="res://assets/Default/green_hand_point.png" id="4_syvpj"]
+[ext_resource type="Texture2D" uid="uid://bib4fr6cirqfc" path="res://assets/Default/green_hand_thumb.png" id="5_8borx"]
+
+[node name="Character" instance=ExtResource("1_e0wpt")]
+
+[node name="Gunner2" type="Node2D" parent="." index="0"]
+
+[node name="GreenBodyCircle" type="Sprite2D" parent="Gunner2" index="0"]
+texture = ExtResource("2_6fcs6")
+
+[node name="FaceD" type="Sprite2D" parent="Gunner2" index="1"]
+position = Vector2(0, -6)
+texture = ExtResource("3_fvy2p")
+
+[node name="GreenHandPoint" type="Sprite2D" parent="Gunner2" index="2"]
+position = Vector2(51, -2)
+texture = ExtResource("4_syvpj")
+
+[node name="GreenHandThumb" type="Sprite2D" parent="Gunner2" index="3"]
+position = Vector2(-49, -6)
+scale = Vector2(-0.919998, 1)
+texture = ExtResource("5_8borx")
