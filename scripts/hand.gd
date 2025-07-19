@@ -14,6 +14,7 @@ func spreadCards():
 	for i in range(len(cards)):
 		cards[i].position.x=1000*(i+1)/(len(cards)+1)
 		cards[i].position.y=10
+		cards[i].id=i
 
 func addCard(card:Card):
 	cards.append(card)

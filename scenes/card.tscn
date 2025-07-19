@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bs3aw1vu5tdks"]
+[gd_scene load_steps=9 format=3 uid="uid://bs3aw1vu5tdks"]
 
 [ext_resource type="Script" uid="uid://6ooxkedivqkr" path="res://scripts/card.gd" id="1_nvopj"]
 [ext_resource type="Texture2D" uid="uid://ccd4tabdsqkok" path="res://art/cards/card_empty.png" id="2_1yd6c"]
-[ext_resource type="FontFile" uid="uid://cbgg56c6o16u1" path="res://art/Silkscreen-Regular.ttf" id="3_we8pq"]
 [ext_resource type="StyleBox" uid="uid://ci5ad2xs3octa" path="res://assets/grey_stylebox.tres" id="4_nvopj"]
 [ext_resource type="StyleBox" uid="uid://clj15pscsn72c" path="res://assets/red stylebox.tres" id="5_u8dfr"]
 [ext_resource type="Texture2D" uid="uid://ci1gn53fglb2m" path="res://art/suit_hearts.png" id="6_hpf3o"]
@@ -18,12 +17,12 @@ texture_margin_bottom = 8.0
 
 [node name="Background" type="TextureRect"]
 texture_filter = 1
-custom_minimum_size = Vector2(234, 334)
+custom_minimum_size = Vector2(158, 217)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -918.0
-offset_bottom = -314.0
+offset_right = -994.0
+offset_bottom = -431.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_1yd6c")
@@ -31,36 +30,37 @@ stretch_mode = 4
 script = ExtResource("1_nvopj")
 
 [node name="Title" type="Label" parent="."]
-texture_filter = 1
+texture_filter = 2
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -34.5
-offset_top = 15.0
-offset_right = 34.5
-offset_bottom = 46.0
+offset_left = -64.0
+offset_top = 14.0
+offset_right = 59.0
+offset_bottom = 43.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_we8pq")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 16
 text = "Title"
+horizontal_alignment = 1
 
 [node name="Panel" type="Panel" parent="."]
 texture_filter = 1
 offset_left = 22.0
-offset_top = 52.0
-offset_right = 206.0
-offset_bottom = 218.0
+offset_top = 40.0
+offset_right = 132.0
+offset_bottom = 129.0
 mouse_filter = 1
 theme_override_styles/panel = ExtResource("4_nvopj")
 
 [node name="Health" type="Panel" parent="."]
 texture_filter = 1
-offset_left = 26.0
-offset_top = 227.0
-offset_right = 96.0
-offset_bottom = 303.0
+offset_left = 15.0
+offset_top = 136.0
+offset_right = 85.0
+offset_bottom = 212.0
+scale = Vector2(0.817767, 0.817767)
 theme_override_styles/panel = ExtResource("5_u8dfr")
 
 [node name="heart" type="TextureRect" parent="Health"]
@@ -92,10 +92,11 @@ vertical_alignment = 1
 
 [node name="Attack" type="Panel" parent="."]
 texture_filter = 1
-offset_left = 138.0
-offset_top = 226.0
-offset_right = 208.0
-offset_bottom = 302.0
+offset_left = 75.0
+offset_top = 135.0
+offset_right = 145.0
+offset_bottom = 211.0
+scale = Vector2(0.857779, 0.857779)
 theme_override_styles/panel = SubResource("StyleBoxTexture_lbpyt")
 
 [node name="sword" type="TextureRect" parent="Attack"]
@@ -125,6 +126,3 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "50"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[connection signal="gui_input" from="." to="." method="_on_gui_input"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

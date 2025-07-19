@@ -10,6 +10,7 @@ theme_override_styles/panel = ExtResource("1_srtw7")
 script = ExtResource("2_dbfmb")
 
 [node name="Label" type="Label" parent="."]
+texture_filter = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "You didn't set your text lol"
