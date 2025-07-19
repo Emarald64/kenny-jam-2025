@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8t4vpf4mjiik"]
+
+[ext_resource type="Script" uid="uid://d1bdo4ijwersg" path="res://scripts/hand.gd" id="1_eyfoh"]
+[ext_resource type="PackedScene" uid="uid://bs3aw1vu5tdks" path="res://scenes/card.tscn" id="2_cmdsa"]
+
+[node name="hand" type="Node2D"]
+script = ExtResource("1_eyfoh")
+
+[node name="Card" parent="." instance=ExtResource("2_cmdsa")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 50.0
+offset_top = 5.0
+offset_right = 92.0
+offset_bottom = 65.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Card2" parent="." instance=ExtResource("2_cmdsa")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 46.0
+offset_right = 88.0
+offset_bottom = 60.0
