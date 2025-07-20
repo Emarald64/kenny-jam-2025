@@ -26,3 +26,7 @@ offset_left = 46.0
 offset_right = 88.0
 offset_bottom = 60.0
 AffectText = "card 2"
+
+[node name="card playing cooldown" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true

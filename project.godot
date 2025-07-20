@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="kenny jam 2025"
-run/main_scene="uid://b8t4vpf4mjiik"
+run/main_scene="uid://bgfhi7w2f7itb"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://art/icon.svg"
 

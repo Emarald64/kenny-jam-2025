@@ -13,11 +13,14 @@ func _ready() -> void:
 
 func play():
 	print("Played "+$Title.text)
-	get_parent().addCard(preload("res://scenes/card.tscn").instantiate())
+	var card=preload("res://scenes/card.tscn").instantiate()
+	card.get_node("Title").text=str(randi_range(0,100))
+	get_parent().addCard(card)
 
 func _process(delta: float) -> void:
 	if isHovered():
-		if Input.is_action_just_released("click"):
+		if Input.is_action_just_released("click") and get_parent().get_node("card playing cooldown").is_stopped():
+			get_parent().get_node("card playing cooldown").start()
 			play()
 		if len(AffectText)>0 and not hovered:
 			popup=preload("res://scenes/popup text.tscn").instantiate()
@@ -37,7 +40,7 @@ func _process(delta: float) -> void:
 		hovered=false
 		
 func isMouseOver() -> bool:
-	return Rect2(Vector2(),size).has_point(get_local_mouse_position())
+	return Rect2(Vector2.ZERO,size).has_point(get_local_mouse_position())
 
 func isHovered() ->bool:
 	return isMouseOver() and(id+1==len(get_parent().cards) or not get_parent().cards[id+1].isMouseOver())

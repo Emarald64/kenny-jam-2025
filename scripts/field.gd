@@ -6,17 +6,18 @@ var enemyChars:Array
 var playerBaseHealth=20
 var enemyBaseHealth=20
 var remainingCapacity=8
+var maxCapacity=8
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
+#func _ready() -> void:
+	#pass # Replace with function body.
+#
+#
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+#func _process(delta: float) -> void:
+	#pass
 
-func addPlayerChar(char:Node2D):
-	playerChars.append(char)
+func addPlayerChar(char:Character,position:=0):
+	playerChars.insert(position,char)
 	add_child(char)
 
 func arrangeChars():
@@ -35,8 +36,7 @@ func turn():
 	for char in enemyChars:
 		for i in range(char.getNumAttacks()):
 			if len(playerChars)>0:
-				if playerChars[0].hurt(char.attack):
-					remainingCapacity+=playerChars[0].capacity
+				playerChars[0].hurt(char.attack)
 			else:
 				playerBaseHealth-=char.attack
 				if playerBaseHealth<=0:
@@ -54,7 +54,12 @@ func turn():
 	for char in enemyChars:
 		char.postTurn(playerChars,enemyChars)
 	for char in playerChars:
-		char.postTurn(playerChars,enemyChars)
+		if char.postTurn(playerChars,enemyChars):
+			remainingCapacity+=char.capacity
+	updateCapacityMeter()
+
+func updateCapacityMeter():
+	$capacity.text=str(remainingCapacity)+"/"+str(maxCapacity)+" capacity"
 
 func win():
 	pass

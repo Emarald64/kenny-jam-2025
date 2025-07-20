@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://bgfhi7w2f7itb"]
+[gd_scene load_steps=7 format=4 uid="uid://bgfhi7w2f7itb"]
 
 [ext_resource type="Script" uid="uid://1hen3y5l7et1" path="res://scripts/field.gd" id="1_5iadj"]
 [ext_resource type="Texture2D" uid="uid://3vpujqurkhhr" path="res://assets/spritesheet-tiles-default.png" id="1_x2uev"]
 [ext_resource type="Texture2D" uid="uid://1lddpr6jkgx7" path="res://art/arrow_right.png" id="3_uawk5"]
+[ext_resource type="PackedScene" uid="uid://b8t4vpf4mjiik" path="res://scenes/hand.tscn" id="4_j00b8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5iadj"]
 texture = ExtResource("1_x2uev")
@@ -336,11 +337,24 @@ tile_map_data = PackedByteArray("AAD+/wAAAgAHAAkAAAD//wAAAgAHAAkAAAAAAAAAAgAHAAk
 tile_set = SubResource("TileSet_uawk5")
 
 [node name="Next Turn" type="Button" parent="."]
-offset_left = 937.0
-offset_top = 563.0
-offset_right = 1091.0
-offset_bottom = 635.0
+offset_left = 942.0
+offset_top = 29.0
+offset_right = 1134.0
+offset_bottom = 101.0
+theme_override_font_sizes/font_size = 24
 text = "Next Turn"
 icon = ExtResource("3_uawk5")
+icon_alignment = 2
+
+[node name="capacity" type="Label" parent="."]
+offset_left = 109.0
+offset_top = 191.0
+offset_right = 248.0
+offset_bottom = 225.0
+theme_override_font_sizes/font_size = 24
+text = "8/8 capacity"
+
+[node name="hand" parent="." instance=ExtResource("4_j00b8")]
+position = Vector2(2, 404)
 
 [connection signal="pressed" from="Next Turn" to="." method="turn"]

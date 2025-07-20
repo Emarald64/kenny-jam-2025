@@ -11,11 +11,11 @@ const weakness = 3
 const vulnerable = 4
 const paralyze = 5
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _ready():
+	#pass # Replace with function body.
+#
+#
+## Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 func preTurn(playerChars,enemyChars):
@@ -25,8 +25,11 @@ func preTurn(playerChars,enemyChars):
 	if modifiers[regen] > 0:
 		health += modifiers[regen]
 		modifiers[regen] -= 1
-func postTurn(playerChars,enemyChars):
-	pass
+func postTurn(playerChars,enemyChars)->bool:
+	if health <= 0:
+		queue_free()
+		return true
+	else: return false
 func hurt(damage):
 	if modifiers[vulnerable] > 0: 
 		if modifiers[rage] > 0: 
@@ -39,10 +42,6 @@ func hurt(damage):
 			health -= (damage + modifiers[rage])
 			modifiers[rage] -= 1
 		else: health -= damage
-	if health <= 0:
-		queue_free()
-		return true
-	else: return false
 func getAttackDamage():
 	if modifiers[weakness] > 0:
 		modifiers[weakness] -= 1
