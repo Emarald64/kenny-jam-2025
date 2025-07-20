@@ -1,14 +1,14 @@
 extends Card
 
 
-# Called when the node enters the scene tree for the first time.
 func play():
-	if Autoload.field.power>=cost and len(Autoload.field.playerChars)>0:
+	if Autoload.field.power>=cost:
 		Autoload.field.power-=cost
 		Autoload.field.updatePowerMeter()
 		
 		#card logic
-		Autoload.field.playerChars[0].heal(15)
+		get_parent().addRandomCard()
+		get_parent().addRandomCard()
 		
 		Autoload.field.cardsPlayed+=1
 		get_parent().removeCard(self)

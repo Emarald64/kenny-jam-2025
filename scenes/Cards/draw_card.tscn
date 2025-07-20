@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://ht1tqi8s5u6"]
+
+[ext_resource type="PackedScene" uid="uid://bs3aw1vu5tdks" path="res://scenes/Cards/card.tscn" id="1_qc682"]
+[ext_resource type="Script" uid="uid://6twbspfik13l" path="res://scripts/draw_card.gd" id="2_bancw"]
+
+[node name="Draw card" instance=ExtResource("1_qc682")]
+script = ExtResource("2_bancw")
+
+[node name="Title" parent="." index="0"]
+text = "Draw"
+
+[node name="Label" type="Label" parent="Panel" index="0"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 108.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Draw 3
+cards"
+
+[node name="Label" parent="Cost" index="0"]
+text = "1"

@@ -83,4 +83,4 @@ func win():
 	pass
 
 func lose():
-	pass
+	$"Lose Screen".show()

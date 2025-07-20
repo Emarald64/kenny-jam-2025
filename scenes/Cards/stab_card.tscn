@@ -1,12 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2qb5pju3rx8o"]
+[gd_scene load_steps=3 format=3 uid="uid://b2qb5pju3rx8o"]
 
 [ext_resource type="PackedScene" uid="uid://bs3aw1vu5tdks" path="res://scenes/Cards/card.tscn" id="1_2nxwa"]
+[ext_resource type="Script" uid="uid://33wv5mae62iw" path="res://scripts/stab_card.gd" id="2_0g755"]
 
 [node name="Stab card" instance=ExtResource("1_2nxwa")]
-cost = 1
+script = ExtResource("2_0g755")
 
 [node name="Title" parent="." index="0"]
 text = "Stab"
+
+[node name="Panel" parent="." index="1"]
+offset_bottom = 159.0
 
 [node name="Label" type="Label" parent="Panel" index="0"]
 texture_filter = 2
@@ -16,6 +20,7 @@ offset_top = 8.0
 offset_right = 103.0
 offset_bottom = 82.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -3
 text = "Deal 7 damage to the enemy's front card"
 autowrap_mode = 2
 

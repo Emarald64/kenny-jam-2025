@@ -11,4 +11,4 @@ func play():
 		Autoload.field.updateCapacityMeter()
 		Autoload.field.addPlayerChar(spawnCharacter.instantiate())
 		Autoload.field.cardsPlayed+=1
-		queue_free()
+		get_parent().removeCard(self)

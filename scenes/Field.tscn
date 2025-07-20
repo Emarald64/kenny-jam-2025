@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bgfhi7w2f7itb"]
+[gd_scene load_steps=11 format=4 uid="uid://bgfhi7w2f7itb"]
 
 [ext_resource type="Script" uid="uid://1hen3y5l7et1" path="res://scripts/field.gd" id="1_5iadj"]
 [ext_resource type="Texture2D" uid="uid://3vpujqurkhhr" path="res://assets/spritesheet-tiles-default.png" id="1_x2uev"]
@@ -330,6 +330,16 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 sources/2 = SubResource("TileSetAtlasSource_5iadj")
 
+[sub_resource type="GDScript" id="GDScript_qfsbk"]
+resource_name = "Restart"
+script/source = "extends Button
+
+
+
+func _on_pressed() -> void:
+	get_tree().reload_current_scene()
+"
+
 [node name="Field" type="Node2D"]
 script = ExtResource("1_5iadj")
 
@@ -425,4 +435,35 @@ offset_bottom = 47.0
 scale = Vector2(1.30772, 1.30772)
 texture = ExtResource("7_qfsbk")
 
+[node name="Lose Screen" type="ColorRect" parent="."]
+visible = false
+z_index = 10
+offset_right = 1148.0
+offset_bottom = 641.0
+color = Color(0, 0, 0, 0.52549)
+
+[node name="Label" type="Label" parent="Lose Screen"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -121.0
+offset_top = 181.0
+offset_right = 121.0
+offset_bottom = 258.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 56
+text = "You Lose"
+
+[node name="Button" type="Button" parent="Lose Screen"]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 431.0
+offset_right = 638.0
+offset_bottom = 484.0
+theme_override_font_sizes/font_size = 32
+text = "Restart"
+script = SubResource("GDScript_qfsbk")
+
 [connection signal="pressed" from="Next Turn" to="." method="turn"]
+[connection signal="pressed" from="Lose Screen/Button" to="Lose Screen/Button" method="_on_pressed"]

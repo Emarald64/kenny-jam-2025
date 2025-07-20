@@ -1,7 +1,7 @@
 extends Node2D
 
 var cards:Array=[]
-const posibleCards=["res://scenes/Cards/Character cards/gunner_card.tscn","res://scenes/Cards/Character cards/healer_card.tscn","res://scenes/Cards/Character cards/wall_card.tscn","res://scenes/Cards/Character cards/warrior_card.tscn"]
+const posibleCards=["res://scenes/Cards/Character cards/gunner_card.tscn","res://scenes/Cards/Character cards/healer_card.tscn","res://scenes/Cards/Character cards/wall_card.tscn","res://scenes/Cards/Character cards/warrior_card.tscn","res://scenes/Cards/stab_card.tscn","res://scenes/Cards/heal_card.tscn","res://scenes/Cards/draw_card.tscn"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,6 +32,7 @@ func addCards(newCards:Array):
 
 func addRandomCard():
 	addCard(load(posibleCards.pick_random()).instantiate())
+	spreadCards()
 
 func removeCard(card:Card):
 	cards.erase(card)
