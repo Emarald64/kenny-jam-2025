@@ -7,8 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://uxq3kiygmedn" path="res://assets/Default/red_hand_open.png" id="5_qc20x"]
 
 [node name="Character" instance=ExtResource("1_jy8hp")]
+attack = 5
+health = 5
+capacity = 1
 
 [node name="Enemy2" type="Node2D" parent="." index="0"]
+position = Vector2(1, -46)
 
 [node name="RedBodyRhombus" type="Sprite2D" parent="Enemy2" index="0"]
 texture = ExtResource("2_boi7v")

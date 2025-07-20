@@ -59,3 +59,6 @@ func heal(ammount:int):
 
 func updateHealthBar():
 	$Heart/Label.text=str(health)
+
+func updateEffects():
+	pass

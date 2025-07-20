@@ -15,6 +15,7 @@ func _ready() -> void:
 func play():
 	if Autoload.field.power>=cost:
 		Autoload.field.power-=cost
+		Autoload.field.cardsPlayed+=1
 		Autoload.field.updatePowerMeter()
 		print("Played "+$Title.text)
 		var card=preload("res://scenes/Cards/card.tscn").instantiate()

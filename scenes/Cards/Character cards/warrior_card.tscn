@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpv8nghga2xld"]
+
+[ext_resource type="PackedScene" uid="uid://ceaeqqq4ke72a" path="res://scenes/Cards/Character cards/character_card.tscn" id="1_77oc2"]
+[ext_resource type="PackedScene" uid="uid://b4k5o0fqgqjcj" path="res://scenes/Characters/Warrior.tscn" id="2_dg3ig"]
+
+[node name="Warrior card" instance=ExtResource("1_77oc2")]
+capacity = 2
+spawnCharacter = ExtResource("2_dg3ig")
+cost = 2
+
+[node name="Title" parent="." index="0"]
+text = "Warrior"
+
+[node name="Health" parent="Health" index="1"]
+text = "55"
+
+[node name="Attack" parent="Attack" index="1"]
+text = "7"
+
+[node name="Label" parent="Cost" index="0"]
+text = "2"
+
+[node name="Label" parent="Capacity" index="0"]
+text = "2"

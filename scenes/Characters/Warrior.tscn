@@ -7,9 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://cgjyord02a0bm" path="res://assets/Default/face_g.png" id="5_mdvi6"]
 
 [node name="Character" instance=ExtResource("1_g34l0")]
-position = Vector2(0, -42)
+attack = 7
+health = 55
+capacity = 2
 
 [node name="Warrior2" type="Node2D" parent="." index="0"]
+position = Vector2(3, -41)
 
 [node name="BlueHandClosed" type="Sprite2D" parent="Warrior2" index="0"]
 position = Vector2(51, 7)
@@ -27,3 +30,17 @@ texture = ExtResource("4_cuqp7")
 [node name="FaceG" type="Sprite2D" parent="Warrior2" index="3"]
 position = Vector2(0, -10)
 texture = ExtResource("5_mdvi6")
+
+[node name="Heart" parent="." index="1"]
+offset_top = -13.0
+offset_bottom = 51.0
+
+[node name="Label" parent="Heart" index="0"]
+text = "55"
+
+[node name="Sword" parent="." index="2"]
+offset_top = -13.0
+offset_bottom = 51.0
+
+[node name="Label" parent="Sword" index="0"]
+text = "7"

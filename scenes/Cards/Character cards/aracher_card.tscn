@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwr52ijmmcfgb"]
+
+[ext_resource type="PackedScene" uid="uid://ceaeqqq4ke72a" path="res://scenes/Cards/Character cards/character_card.tscn" id="1_mjavt"]
+[ext_resource type="PackedScene" uid="uid://dcc8y5txo0nec" path="res://scenes/Characters/Archer.tscn" id="2_0r4vk"]
+
+[node name="Aracher Card" instance=ExtResource("1_mjavt")]
+capacity = 1
+spawnCharacter = ExtResource("2_0r4vk")
+
+[node name="Title" parent="." index="0"]
+text = "Archer"
+
+[node name="Health" parent="Health" index="1"]
+text = "10"
+
+[node name="Attack" parent="Attack" index="1"]
+text = "10"
+
+[node name="Cost" parent="." index="4"]
+scale = Vector2(0.491109, 0.491109)
+
+[node name="Label" parent="Cost" index="0"]
+text = "1"
+
+[node name="Label" parent="Capacity" index="0"]
+text = "1"

@@ -5,6 +5,7 @@
 
 [node name="Wall card" instance=ExtResource("1_3venl")]
 spawnCharacter = ExtResource("2_hx06k")
+AffectText = "takes 3 less damage from attacks"
 
 [node name="Title" parent="." index="0"]
 text = "Wall"

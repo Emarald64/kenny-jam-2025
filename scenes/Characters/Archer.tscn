@@ -9,8 +9,12 @@
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_11vuw"]
 
 [node name="Character" instance=ExtResource("1_qm8lu")]
+attack = 10
+health = 10
+capacity = 1
 
 [node name="Archer2" type="Node2D" parent="." index="0"]
+position = Vector2(1, -43)
 
 [node name="PinkBodyRhombus" type="Sprite2D" parent="Archer2" index="0"]
 texture = ExtResource("2_vtcc4")
@@ -33,3 +37,9 @@ texture = ExtResource("5_wl1de")
 position = Vector2(14.5, -4.25)
 scale = Vector2(1.15, 1.025)
 texture = SubResource("CompressedTexture2D_11vuw")
+
+[node name="Label" parent="Heart" index="0"]
+text = "10"
+
+[node name="Label" parent="Sword" index="0"]
+text = "10"

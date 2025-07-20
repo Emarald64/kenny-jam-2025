@@ -1,5 +1,4 @@
 extends Character
 
-func postTurn(playerChars,enemyChars):
-	modifiers[regen]+=3
-	return super.postTurn(playerChars,enemyChars)
+func hurt(damage):
+	super.hurt(max(damage-3,0))

@@ -8,6 +8,8 @@ var enemyBaseHealth=100
 var remainingCapacity=8
 var maxCapacity=8
 var power=6
+var cardsPlayed=0
+var cardDraw=4
 
 
 
@@ -34,6 +36,7 @@ func arrangeChars():
 		enemyChars[i].position.y=351
 
 func turn():
+	$hand.clearCards()
 	for char in enemyChars:
 		char.preTurn(playerChars,enemyChars)
 	for char in playerChars:
@@ -64,8 +67,11 @@ func turn():
 		if char.postTurn(playerChars,enemyChars):
 			remainingCapacity+=char.capacity
 	power=6
+	cardsPlayed=0
 	updateCapacityMeter()
 	updatePowerMeter()
+	for i in range(cardDraw):
+		$hand.addRandomCard()
 
 func updateCapacityMeter():
 	$capacity.text="Capacity: "+str(remainingCapacity)+"/"+str(maxCapacity)

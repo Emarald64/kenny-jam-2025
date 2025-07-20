@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjqun1bv7070e"]
+[gd_scene load_steps=7 format=3 uid="uid://bjqun1bv7070e"]
 
 [ext_resource type="PackedScene" uid="uid://r1kcga61rmtc" path="res://scenes/Characters/Character.tscn" id="1_e0wpt"]
 [ext_resource type="Texture2D" uid="uid://bkay2fthmtiwf" path="res://assets/Default/green_body_circle.png" id="2_6fcs6"]
+[ext_resource type="Script" uid="uid://w74a4kuvdbk" path="res://scripts/gunner.gd" id="2_jsud8"]
 [ext_resource type="Texture2D" uid="uid://bkj1ymxcw48uy" path="res://assets/Default/face_d.png" id="3_fvy2p"]
 [ext_resource type="Texture2D" uid="uid://bxpeoaguem1wc" path="res://assets/Default/green_hand_point.png" id="4_syvpj"]
 [ext_resource type="Texture2D" uid="uid://bib4fr6cirqfc" path="res://assets/Default/green_hand_thumb.png" id="5_8borx"]
 
 [node name="Character" instance=ExtResource("1_e0wpt")]
+script = ExtResource("2_jsud8")
+attack = 25
+health = 6
 
 [node name="Gunner2" type="Node2D" parent="." index="0"]
 position = Vector2(0, -42)
@@ -26,3 +30,9 @@ texture = ExtResource("4_syvpj")
 position = Vector2(-49, -6)
 scale = Vector2(-0.919998, 1)
 texture = ExtResource("5_8borx")
+
+[node name="Label" parent="Heart" index="0"]
+text = "25"
+
+[node name="Label" parent="Sword" index="0"]
+text = "6"

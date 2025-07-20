@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcar6bhl7vytj"]
+
+[ext_resource type="PackedScene" uid="uid://ceaeqqq4ke72a" path="res://scenes/Cards/Character cards/character_card.tscn" id="1_mwcxl"]
+[ext_resource type="PackedScene" uid="uid://bjqun1bv7070e" path="res://scenes/Characters/Gunner.tscn" id="2_hjdaq"]
+
+[node name="Gunner Card" instance=ExtResource("1_mwcxl")]
+capacity = 4
+spawnCharacter = ExtResource("2_hjdaq")
+AffectText = "Attacks once per card
+played this turn"
+cost = 3
+
+[node name="Title" parent="." index="0"]
+text = "Gunner"
+
+[node name="Health" parent="Health" index="1"]
+text = "25"
+
+[node name="Attack" parent="Attack" index="1"]
+text = "6"
+
+[node name="Label" parent="Capacity" index="0"]
+text = "3"
