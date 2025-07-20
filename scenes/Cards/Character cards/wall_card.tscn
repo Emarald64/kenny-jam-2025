@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://5xh8afmtag83"]
+
+[ext_resource type="PackedScene" uid="uid://ceaeqqq4ke72a" path="res://scenes/Cards/Character cards/character_card.tscn" id="1_3venl"]
+[ext_resource type="PackedScene" uid="uid://8y1756skir0h" path="res://scenes/Characters/Wall.tscn" id="2_hx06k"]
+
+[node name="Wall card" instance=ExtResource("1_3venl")]
+spawnCharacter = ExtResource("2_hx06k")
+
+[node name="Title" parent="." index="0"]
+text = "Wall"
+
+[node name="Health" parent="Health" index="1"]
+text = "75"
+
+[node name="Attack" parent="Attack" index="1"]
+text = "6"
+
+[node name="Label" parent="Capacity" index="0"]
+text = "3"

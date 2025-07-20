@@ -3,7 +3,7 @@ extends Node2D
 @export var attack = 0
 @export var health = 0
 @export var capacity = 0
-@export var modifiers = [0,0,0,0,0,0]
+var modifiers = [0,0,0,0,0,0]
 const regen = 0
 const rage = 1
 const poison = 2
@@ -11,11 +11,10 @@ const weakness = 3
 const vulnerable = 4
 const paralyze = 5
 # Called when the node enters the scene tree for the first time.
-#func _ready():
-	#pass # Replace with function body.
+func _ready():
+	updateHealthBar()
+	$Sword/Label.text=str(attack)
 #
-#
-## Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 func preTurn(playerChars,enemyChars):
@@ -42,6 +41,7 @@ func hurt(damage):
 			health -= (damage + modifiers[rage])
 			modifiers[rage] -= 1
 		else: health -= damage
+	updateHealthBar()
 func getAttackDamage():
 	if modifiers[weakness] > 0:
 		modifiers[weakness] -= 1
@@ -52,3 +52,10 @@ func getNumAttacks():
 		modifiers[paralyze] -= 1
 		return 0
 	return 1
+
+func heal(ammount:int):
+	health+=ammount
+	updateHealthBar()
+
+func updateHealthBar():
+	$Heart/Label.text=str(health)

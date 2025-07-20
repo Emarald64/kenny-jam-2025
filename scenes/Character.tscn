@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://r1kcga61rmtc"]
-
-[ext_resource type="Script" uid="uid://dv1ineyemrt6" path="res://scripts/character.gd" id="1_3i3nt"]
-
-[node name="Character" type="Node2D"]
-script = ExtResource("1_3i3nt")
-metadata/Health = 0
-metadata/Damage = 0

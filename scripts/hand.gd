@@ -13,7 +13,7 @@ func _ready() -> void:
 func spreadCards():
 	for i in range(len(cards)):
 		cards[i].rotation=(PI/16*(i+1)/(len(cards)+1))-PI/32
-		cards[i].position.x=(sin(cards[i].rotation*4)*1200)+500
+		cards[i].position.x=(sin(cards[i].rotation*4)*1000)+500
 		cards[i].position.y=-cos(cards[i].rotation*4)*200+200
 		if cards[i].hovered:cards[i].position.y-=10
 		cards[i].id=i

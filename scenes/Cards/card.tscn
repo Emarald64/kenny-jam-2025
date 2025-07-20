@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://bs3aw1vu5tdks"]
+
+[ext_resource type="Texture2D" uid="uid://ccd4tabdsqkok" path="res://art/cards/card_empty.png" id="1_ad4w7"]
+[ext_resource type="Script" uid="uid://6ooxkedivqkr" path="res://scripts/card.gd" id="2_e8vim"]
+[ext_resource type="StyleBox" uid="uid://ci5ad2xs3octa" path="res://assets/grey_stylebox.tres" id="3_t5m02"]
+[ext_resource type="Texture2D" uid="uid://vru4muytl4y2" path="res://art/star.png" id="4_e8vim"]
+
+[node name="Background" type="TextureRect"]
+texture_filter = 1
+custom_minimum_size = Vector2(158, 217)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -994.0
+offset_bottom = -431.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ad4w7")
+stretch_mode = 4
+script = ExtResource("2_e8vim")
+
+[node name="Title" type="Label" parent="."]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = 14.0
+offset_right = 59.0
+offset_bottom = 43.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Title"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 22.0
+offset_top = 40.0
+offset_right = 132.0
+offset_bottom = 129.0
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("3_t5m02")
+
+[node name="Cost" type="TextureRect" parent="."]
+texture_filter = 2
+layout_mode = 0
+offset_left = 9.0
+offset_top = 10.0
+offset_right = 73.0
+offset_bottom = 70.0
+scale = Vector2(0.491109, 0.491109)
+texture = ExtResource("4_e8vim")
+
+[node name="Label" type="Label" parent="Cost"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1

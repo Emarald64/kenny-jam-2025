@@ -1,7 +1,8 @@
 extends Control
 class_name Card 
 
-@export var AffectText:String
+@export_multiline var AffectText:String=""
+@export var cost:int=4
 var popup:PanelContainer
 var hovered:=false
 var id=0
@@ -9,13 +10,16 @@ var canPlay=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	print(AffectText)
 
 func play():
-	print("Played "+$Title.text)
-	var card=preload("res://scenes/card.tscn").instantiate()
-	card.get_node("Title").text=str(randi_range(0,100))
-	get_parent().addCard(card)
+	if Autoload.field.power>=cost:
+		Autoload.field.power-=cost
+		Autoload.field.updatePowerMeter()
+		print("Played "+$Title.text)
+		var card=preload("res://scenes/Cards/card.tscn").instantiate()
+		card.get_node("Title").text=str(randi_range(0,100))
+		get_parent().addCard(card)
 
 func _process(delta: float) -> void:
 	if isHovered():
@@ -25,6 +29,7 @@ func _process(delta: float) -> void:
 		if len(AffectText)>0 and not hovered:
 			popup=preload("res://scenes/popup text.tscn").instantiate()
 			popup.z_index=2
+			popup.rotation=-rotation
 			popup.get_node("Label").text=AffectText;
 			add_child(popup)
 		scale=Vector2.ONE*1.2
